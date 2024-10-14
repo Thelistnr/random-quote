@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: Raleway, "sans-serif" ;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.land{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  min-height: 100vh;
+  transition: 1s ease-in-out;
+}
+.randQuote{
+  background-color: white;
+  width: 50%;
+  max-width: 450px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 50px;
+}
+.quote{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  transition: 1s ease-in-out;
+}
+.land .footer{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.footer button{
+  width: 101.03px;
+  padding: 0;
+  height: 38px;
+  border: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13.6px;
+  font-family: Arial, sans-serif;
+  border-radius: 3px;
+}
+
+/* Icons */
+.tumblr, .twitter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 38px;
+  border-radius: 3px;
+}
+
+@media only screen and (max-width: 600px){
+  .randQuote{
+    width: 80%;
+    gap: 10px;
+    padding: 20px 25px;
+  }
+  .quote{
+    font-size: 20px;
+  }
+  .quoteAuthor{
+    font-size: 12px;
+  }
+  .quoIco{
+    height: 30px !important;
+    margin: 0 0.4rem -4px 0 !important;
+  }
+  .footer button{
+    width: 95px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  /* Icons */
+  .tumblr, .twitter{
+    width: 30px;
+    height: 28px;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  .randQuote{
+    width: 80%;
+    padding: 10px 15px;
+  }
+  .quote{
+    font-size: 15px;
+  }
+  .quoIco{
+    height: 22px !important;
+    margin: 0 0.4rem -4px 0 !important;
+  }
+}
