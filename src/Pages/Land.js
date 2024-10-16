@@ -1,9 +1,10 @@
-import { faTumblr } from "@fortawesome/free-brands-svg-icons/faTumblr";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons/faXTwitter";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons/faQuoteLeft";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import quotes from "../Assets/Data/Quotes";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faCopy } from "@fortawesome/free-regular-svg-icons";
 
 const Land = () => {
     const [id, setId] = useState(Math.trunc(Math.random(0) * 101));
@@ -44,12 +45,15 @@ const Land = () => {
                 </div>
                 <div className="footer">
                     <div className="icons" style={{display:'flex', gap:'10px'}}>
-                        <a href="twitter.com/intent/tweet" className="tumblr" style={{backgroundColor:color, transition: "1s ease-in-out"}}>
-                            <FontAwesomeIcon icon={faTumblr} style={{height:19, color:'white'}}/>
-                        </a>
-                        <a href="tumblr.com" className="twitter" id="tweet-quote" style={{backgroundColor:color, transition: "1s ease-in-out"}}>
+                        <a href={`https://twitter.com/intent/tweet?hashtags=quotes&related=Cookoorook&text=${quotes[id].quote}%20-${quotes[id].author}`} target="blank" className="twitter" id="tweet-quote" style={{backgroundColor:color, transition: "1s ease-in-out"}}>
                             <FontAwesomeIcon icon={faXTwitter} style={{height:19, color:'white'}}/>
                         </a>
+                        <a href={`whatsapp://send?text=${quotes[id].quote}%20-${quotes[id].author}`} data-action="share/whatsapp/share" target="blank" className="whatsapp" style={{backgroundColor:color, transition: "1s ease-in-out"}}>
+                            <FontAwesomeIcon icon={faWhatsapp} style={{height:19, color:'white'}}/>
+                        </a>
+                        <div onClick={e => {navigator.clipboard.writeText(`${quotes[id].quote} -${quotes[id].author}`); alert("Quote copied");}} className="copy" style={{backgroundColor:color, transition: "1s ease-in-out", cursor:'pointer'}}>
+                            <FontAwesomeIcon icon={faCopy} style={{height:19, color:'white'}}/>
+                        </div>
                     </div>
                     <button id="new-quote" style={{backgroundColor:color, transition: "1s ease-in-out"}} onClick={handleClick}>
                         New quote
